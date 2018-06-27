@@ -6,17 +6,37 @@ import (
 	"math/rand"
 	"net/http"
 	"sync"
+	"text/template"
 	"time"
 )
 
 func greet(w http.ResponseWriter, r *http.Request) {
-	for index := 0; index < 1000; index++ {
 
-		fmt.Fprintf(w, "Hello World! %s", time.Now())
-	}
+	var h = `<form action="http://40.113.149.11/v1/order/" method="POST">
+    <input type="text" name="EmailAddress" value="guyravid94@gmail.com"><br>
+    <input type="text" name="ID" value="1"><br>
+    <input type="text" name="PreferredLanguage" value="en"><br>
+    <input type="text" name="Product" value="Mickey"><br>
+    <input type="text" name="Partition" value="Mickey"><br>
+    <input type="text" name="Source" value="Mickey"><br>
+    <input type="text" name="Status" value="Mickey"><br>
+    <input type="text" name="Total" value="2242"><br>
+    <input type="submit" value="Submit">
+  </form>
+`
+
+	t, _ := template.New("foo").Parse(h)
+	t.Execute(w, "sds")
 }
 
 func main() {
+
+	http.HandleFunc("/", greet)
+	http.ListenAndServe(":8080", nil)
+
+}
+
+func runAsyncPost() {
 
 	var wg sync.WaitGroup
 	for index := 0; index < 300; index++ {
