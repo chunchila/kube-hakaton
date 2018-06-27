@@ -1,4 +1,4 @@
-curl -X POST "http://40.113.149.11/v1/order/" 
+##### curl -X POST "http://40.113.149.11/v1/order/" 
 
 -H  "accept: application/json" 
 -H  "content-type: application/json"
