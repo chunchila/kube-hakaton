@@ -7,6 +7,7 @@ import (
 	"math/rand"
 	"net/http"
 	"sync"
+	"text/template"
 	"time"
 )
 
@@ -83,12 +84,14 @@ func greet(w http.ResponseWriter, r *http.Request) {
 </html>
 `
 
+	t, _ := template.New("foo").Parse(h)
+	t.Execute(w, "sds")
 }
 
 func main() {
 
 	http.HandleFunc("/", greet)
-	log.Fatal(http.ListenAndServe(":8081", nil))
+	log.Fatal(http.ListenAndServe(":5000", nil))
 
 }
 
