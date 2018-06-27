@@ -19,8 +19,8 @@ WORKDIR /root/
 COPY --from=builder /go/src/app .
 
 
-# Expose the application on port 8080
-EXPOSE 8080
+# Expose the application on port 8081
+EXPOSE 8081
 
 # Set the entry point of the container to the bee command that runs the
 # application and watches for changes
