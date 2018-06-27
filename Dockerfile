@@ -19,6 +19,7 @@ WORKDIR /root/
 COPY --from=builder /go/src/app .
 
 
+
 # Expose the application on port 8081
 EXPOSE 8081
 
