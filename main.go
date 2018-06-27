@@ -128,6 +128,7 @@ func postMe(url string, wg *sync.WaitGroup, index int, random int) {
 	defer resp.Body.Close()
 
 	fmt.Println("response Status:", resp.Status, index)
+
 	//fmt.Println("response Headers:", resp.Header)
 	//body, _ := ioutil.ReadAll(resp.Body)
 	//fmt.Println("response Body:", string(body))
