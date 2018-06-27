@@ -39,6 +39,7 @@ func greet(w http.ResponseWriter, r *http.Request) {
 
     <!-- Custom styles for this template -->
     <link href="./css/freelancer.min.css" rel="stylesheet">
+    
 
 </head>
 
