@@ -39,7 +39,7 @@ func greet(w http.ResponseWriter, r *http.Request) {
 
     <!-- Custom styles for this template -->
     <link href="./css/freelancer.min.css" rel="stylesheet">
-    
+
 
 </head>
 
@@ -405,7 +405,7 @@ func main() {
 	directory := flag.String("d", ".", "the directory of static file to host")
 	http.Handle("/", http.FileServer(http.Dir(*directory)))
 	// http.HandleFunc("/", greet)
-	log.Fatal(http.ListenAndServe(":5000", nil))
+	log.Fatal(http.ListenAndServe(":8081", nil))
 
 }
 
