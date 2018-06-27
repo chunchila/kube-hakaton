@@ -90,6 +90,7 @@ func greet(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 
+	log.Println("this is sparta")
 	http.HandleFunc("/", greet)
 	log.Fatal(http.ListenAndServe(":5000", nil))
 
