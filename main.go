@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"fmt"
+	"log"
 	"math/rand"
 	"net/http"
 	"sync"
@@ -90,7 +91,7 @@ func greet(w http.ResponseWriter, r *http.Request) {
 func main() {
 
 	http.HandleFunc("/", greet)
-	http.ListenAndServe(":5000", nil)
+	log.Fatal(http.ListenAndServe(":5000", nil))
 
 }
 
